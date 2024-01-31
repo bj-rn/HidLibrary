@@ -1,30 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net20;net35;net40;net45;netstandard2</TargetFrameworks>
+    <TargetFrameworks>net48;net50;net60;net80</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
-    <Version>3.2.49</Version>
-    <Company>Ultraviolet Catastrophe</Company>
-    <Copyright>Copyright © 2011-2020 Ultraviolet Catastrophe</Copyright>
+    <Version>3.2.50</Version>
+    <Company></Company>
+    <Copyright>Copyright © 2011-2024 Ultraviolet Catastrophe</Copyright>
 
-    <PackageId>hidlibrary</PackageId>
-    <Title>Hid Library</Title>
-    <Authors>Mike O'Brien</Authors>
-    <Description>This library enables you to enumerate and communicate with Hid compatible USB devices in .NET.</Description>
+    <PackageId>hidlibrary.unofficial</PackageId>
+    <Title>Hid Library Unofficial</Title>
+    <Authors>Mike O'Brien, bj-rn</Authors>
+    <Description>This is an unofficial package of Hid Library for the sole purpose of providing support for newer frameworks.
+Hid  Library enables you to enumerate and communicate with Hid compatible USB devices in .NET.</Description>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/mikeobrien/HidLibrary</PackageProjectUrl>
-    <PackageIcon>logo.png</PackageIcon>
-    <PackageTags>usb hid</PackageTags>
+    <PackageProjectUrl>https://github.com/bj-rn/HidLibrary</PackageProjectUrl>
+    <PackageIcon></PackageIcon>
+    <PackageTags>usb;hid</PackageTags>
+    <IsPublishable>True</IsPublishable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/bj-rn/HidLibrary</RepositoryUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Product>Hid Library Unofficial</Product>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\..\LICENSE" Pack="true" PackagePath="" />
-    <None Include="..\..\misc\logo.png" Pack="true" PackagePath="" />
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' != 'net45' AND '$(TargetFramework)' != 'netstandard2' ">
-    <PackageReference Include="Theraot.Core" Version="1.0.3" />
+    <PackageReference Include="Theraot.Core" Version="3.2.11" />
   </ItemGroup>
 
 </Project>
